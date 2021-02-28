@@ -8,8 +8,11 @@ refs.searchForm.addEventListener('submit', event => {
 
   const form = event.currentTarget;
   const inputValue = form.elements.query.value;
+
   console.log(inputValue);
+
   refs.containerGallery.innerHTML = '';
+  form.reset();
   fetchGallery(inputValue).then(updateGallerymarkup);
   console.log(fetchGallery(inputValue));
 });
