@@ -1,6 +1,5 @@
 import './css/styles.css';
 import refs from './js/refs';
-//import fetchGallery from './js/fetchGallery';
 import updateGallerymarkup from './js/update-gallery-markup';
 import morePages from './js/more-pages';
 
@@ -26,7 +25,7 @@ refs.loadMoreBtn.addEventListener('click', () => {
   morePages.fetchGallery().then(hits => {
     updateGallerymarkup(hits);
     window.scrollTo({
-      top: document.documentElement.offsetHeight,
+      top: window.innerHeight + window.pageYOffset,
       behavior: 'smooth',
     });
   });
