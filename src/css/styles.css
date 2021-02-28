@@ -14,3 +14,19 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.photo-card:nth-child(4n+4) {
+  margin-right: 0;
+
+}
