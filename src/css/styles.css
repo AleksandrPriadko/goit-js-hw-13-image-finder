@@ -22,11 +22,45 @@ body {
 
 .photo-card {
   display: block;
+  position: relative;
+  height: 309px;
   margin-right: 20px;
   margin-bottom: 20px;
+
+  box-shadow: -1px 6px 16px 1px rgba(114, 114, 114, 0.75);
+  -webkit-box-shadow: -1px 6px 16px 1px rgba(114, 114, 114, 0.75);
+  -moz-box-shadow: -1px 6px 16px 1px rgba(114, 114, 114, 0.75);
 }
 
 .photo-card:nth-child(4n+4) {
   margin-right: 0;
 
+}
+
+.button.is-hidden {
+  display: none;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.stats-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.stats-item:nth-child(-n+3) {
+  margin-right: 20px;
+}
+
+.material-icons {
+  display: flex;
+  justify-content: center;
 }

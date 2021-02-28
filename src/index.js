@@ -8,22 +8,26 @@ refs.searchForm.addEventListener('submit', event => {
   event.preventDefault();
 
   const form = event.currentTarget;
-  searchQuery = form.elements.query.value;
+  morePages.query = form.elements.query.value;
 
   refs.containerGallery.innerHTML = '';
-  form.reset();
 
   morePages.resetPage();
+  refs.loadMoreBtn.classList.add('is-hidden');
 
-  fetchGallery(searchQuery).then(hits => {
+  morePages.fetchGallery().then(hits => {
     updateGallerymarkup(hits);
-    page += 1;
+    refs.loadMoreBtn.classList.remove('is-hidden');
   });
+  form.reset();
 });
 
 refs.loadMoreBtn.addEventListener('click', () => {
-  fetchGallery(searchQuery).then(hits => {
+  morePages.fetchGallery().then(hits => {
     updateGallerymarkup(hits);
-    page += 1;
+    window.scrollTo({
+      top: document.documentElement.offsetHeight,
+      behavior: 'smooth',
+    });
   });
 });
